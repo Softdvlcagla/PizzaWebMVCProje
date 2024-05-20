@@ -1,0 +1,35 @@
+﻿@using PizzaWebMVCProje.Models
+@model List<tblMusteriler>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+<img src="~/img/MÜŞTERİLERİMİZ.png" alt="yoneticiİletisim"width="1200" height="250" />
+<table class="table table-bordered">
+    <tr>
+        <th>Musteri ID</th>
+        <th>Musteri Ad</th>
+        <th>Musteri Soyad</th>
+
+    </tr>
+    <tbody>
+
+        @foreach (var mus in Model)
+        {
+
+            <tr>
+                <th>@mus.MusteriD</th>
+                <td>@mus.MusteriAd</td>
+                <td>@mus.MusteriSoyad</td>
+
+            </tr>
+
+        }
+
+    </tbody>
+</table>
+<a href="/Musteriler/YeniMusteri/" class="btn btn-danger">Müşteri Ad ve Soyad Ekleyin</a>
+<br />
+<br />
+

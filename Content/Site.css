@@ -1,0 +1,67 @@
+﻿/* Set padding to keep content from hitting the edges */
+.body-content {
+    margin-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+@import url('https://fonts.googleapis.com/css2?family=Herr+Von+Muellerhoff&family=Inter:wght@700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+.panel {
+    background-size: auto 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 80vh;
+    border-radius: 50px;
+    cursor: pointer;
+    flex: 0.5;
+    margin: 10px;
+    position: relative;
+    transition: flex 0.7s ease-in;
+}
+
+    .panel h3 {
+        font-size: 24px;
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        margin: 0px;
+        opacity: 0;
+    }
+
+    .panel.active {
+        flex: 5;
+    }
+
+        .panel.active h3 {
+            text-decoration: underline;
+            opacity: 1;
+            transition: opacity 0.3s ease-in 0.4s;
+        }
+
+@media (max-width: 600px) {
+    .container {
+        width: 100vw;
+    }
+
+    .panel:nth-of-type(4), .panel:nth-of-type(5) {
+        display: none;
+    }
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}

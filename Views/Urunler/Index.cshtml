@@ -1,0 +1,35 @@
+﻿@using PizzaWebMVCProje.Models
+@model List<tblUrunler>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+<img src="~/img/ÜRÜNLERİMİZ.png" alt="yoneticiİletisim" width="1200" height="250" />
+<table class="table table-bordered">
+    <tr>
+        <th>Urun ID</th>
+        <th>Urun Adı</th>
+        <th>Urun Kategori</th>
+        <th>Fiyat</th>
+
+    </tr>
+    <tbody>
+
+        @foreach (var urun in Model)
+        {
+            <tr>
+                <th>@urun.UrunID</th>
+                <td>@urun.UrunAdi</td>
+                <td>@urun.UrunKategori</td>
+                <td>@urun.Fiyat</td>
+
+
+
+
+            </tr>
+        }
+
+    </tbody>
+</table>
+

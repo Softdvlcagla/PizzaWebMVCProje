@@ -1,0 +1,32 @@
+﻿@using PizzaWebMVCProje.Models
+@model List<tblKategoriler>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+<img src="~/img/KATEGORİ EKLEME.png" alt="yoneticiİletisim" width="1200" height="250"/>
+<table class="table table-bordered">
+    <tr>
+        <th>KategoriID</th>
+
+        <th>Kategori Adı</th>
+
+
+    </tr>
+    <tbody>
+        @foreach (var ktgr in Model)
+        {
+            <tr>
+                <th>@ktgr.KategoriID</th>
+                <td>@ktgr.KategoriAdi</td>
+
+            </tr>
+        }
+
+    </tbody>
+</table>
+<a href="/Kategori/Yenikategori/" class="btn btn-danger">YENİ KATEGORİ EKLE</a>
+<br />
+<br />
+<br />

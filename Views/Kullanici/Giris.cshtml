@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "Giriş";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+@using PizzaWebMVCProje.Models
+@model List<Kullanicilar>
+
+<div class="row">
+    <div class="col-md-4">
+
+    </div>
+    <img src="~/img/İLETİŞİM.png" alt="yoneticiİletisim"width="1200" height="250" />
+    <div class="col-md-4">
+       
+        <form method="post" class="form-group">
+            <div class="mb-5">
+                <label for="exampleInputEmail1" class="form-label">Mail Adresi</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" name="KullaniciEposta" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Şifre</label>
+                <input type="password" class="form-control" name="KullaniciSifre" id="exampleInputPassword1">
+            </div>
+            <br />
+            <button type="submit" class="btn btn-danger">Giriş</button>
+        </form>
+    </div>
+    <div class="col-md-4">
+
+    </div>
+</div>

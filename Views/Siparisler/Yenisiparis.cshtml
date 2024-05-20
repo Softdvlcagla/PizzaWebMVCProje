@@ -1,0 +1,51 @@
+﻿@using PizzaWebMVCProje.Models
+@model List<tblSiparisler>
+@{
+    ViewBag.Title = "Yenisiparis";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+<img src="~/img/SİPARİŞ VER.png" alt="yoneticiİletisim" width="1200" height="250" />
+<form class="form-group" method="post">
+
+    <div>
+        <label for="SiparisAd">Sipariş Adı:</label>
+        <input type="text" class="form-control" id="SiparisAd" name="SiparisAd" />
+    </div>
+    <div>
+        <label for="SiparisTarihi">Sipariş Tarihi:</label>
+        <input type="datetime" class="form-control" id="SiparisTarihi" name="SiparisTarihi" />
+    </div>
+    <div>
+        <label for="Fiyat">Fiyat:</label>
+        <input type="text" class="form-control" id="Fiyat" disabled name="Fiyat" />
+        <br />
+    </div>
+    <div>
+        <button class="btn btn-danger">Siparişi Ekle</button>
+        <br />
+        <br />
+        <br />
+    </div>
+    <br />
+</form>
+<script>
+$(document).ready(function() {
+    $('#SiparisAd').change(function () {
+        var urunAdi = $(this).val();
+        $.ajax({
+            url: '@Url.Action("FiyatGetir", "Siparisler")',
+            type: 'GET',
+            data: { urunAdi: urunAdi },
+            success: function(data) {
+            $('#Fiyat').val(data);
+            },
+            error: function(xhr, status, error) {
+            console.log(error);
+            }
+        });
+    });
+});
+</script>
+
+
+
